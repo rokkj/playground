@@ -3,6 +3,15 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "hashicorp/bionic64"
 
+# Proxy
+  config.vm.define :proxy do |cfg|
+	cfg.vm.box = "centos/7"
+        cfg.vm.network :private_network, ip: "10.0.0.9"
+        cfg.vm.provider :virtualbox do |v|
+            v.name = "proxy"
+        end
+    end
+
 # Database
   config.vm.define :DB do |cfg|
         cfg.vm.network :private_network, ip: "10.0.0.11"

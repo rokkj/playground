@@ -19,3 +19,10 @@
   become_method: sudo
   roles:
   - passenger
+
+- hosts: proxy
+  remote_user: root
+  become: yes
+  become_method: sudo
+  roles:
+  - proxy
