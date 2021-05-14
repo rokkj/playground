@@ -11,11 +11,11 @@ Host OS = Ubuntu 20.04.2 LTS
 
 Clone Repository
 ```sh
-$ git clone 
+$ git clone git@github.com:ronakvjain/playground.git
 ```
 
 Run
 ```sh
-$ cd /
+$ cd ./playground
 $ vagrant up
 ```
