@@ -1,0 +1,21 @@
+---
+- hosts: LB
+  remote_user: root
+  become: yes
+  become_method: sudo
+  roles:
+  - haproxy
+
+- hosts: DB
+  remote_user: root
+  become: yes
+  become_method: sudo
+  roles:
+  - mysql
+
+- hosts: App
+  remote_user: root
+  become: yes
+  become_method: sudo
+  roles:
+  - passenger

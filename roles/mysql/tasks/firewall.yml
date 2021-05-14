@@ -1,0 +1,12 @@
+---
+- name: Allow all access to tcp port 22
+  shell: ufw allow 22
+
+- name: Allow App1 servers to access mysql port 
+  shell: ufw allow from 10.0.0.12 to any port 3306
+
+- name: Allow App1 servers to access mysql port
+  shell: ufw allow from 10.0.0.13 to any port 3306
+
+- name: Enable firewall
+  shell: ufw --force enable
