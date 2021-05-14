@@ -18,4 +18,4 @@
   become: yes
   become_method: sudo
   roles:
-  - passenger
+  - nginx
