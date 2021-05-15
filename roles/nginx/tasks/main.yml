@@ -41,6 +41,24 @@
   notify:
     - reload nginx
 
+- name: Copy nginx virtual host for the custom app.
+  copy:
+    src: app.example.com
+    dest: "/etc/nginx/sites-available/app.example.com.conf"
+    owner: root
+    group: "{{ root_group }}"
+    mode: 0644
+
+- name: Create symbolic link for the virtual host.
+  file:
+    src: "/etc/nginx/sites-available/app.example.com.conf"
+    dest: "/etc/nginx/sites-enabled/app.example.com.conf"
+    owner: root
+    group: "{{ root_group }}"
+    state: link
+  notify:
+    - reload nginx
+
 - name: Ensure nginx service is running as configured.
   service:
     name: nginx

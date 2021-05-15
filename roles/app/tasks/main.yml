@@ -1,0 +1,7 @@
+---
+
+- name: Deploy app_one
+  shell: nohup python3 -m http.server 8888 &
+
+- name: Deploy app_two
+  shell: nohup python3 -m http.server 8080 &  

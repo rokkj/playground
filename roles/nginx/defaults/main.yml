@@ -56,7 +56,7 @@ nginx_extra_http_options: ""
 #      proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
 #      proxy_set_header   Host $http_host;
 
-nginx_remove_default_vhost: false
+nginx_remove_default_vhost: true
 
 # Listen on IPv6 (default: true)
 nginx_listen_ipv6: true
